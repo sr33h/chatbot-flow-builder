@@ -1,0 +1,41 @@
+.message-node {
+    height: 35px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    border: none;
+    padding: 0px;
+    border-radius: 3px;
+    background: white;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.3);
+  }
+  
+ 
+.node-header{
+  height: 12px;
+  width: 100%;
+  background-color: aquamarine;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+  
+.node-body{
+  font-size: 7px;
+  padding: 5px 0px 5px 5px;
+  height: 13px;
+  width: 144px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.node-body:hover{
+  cursor:pointer;
+}
+
+.handle {
+  height: 3px;
+  width: 3px;
+}

@@ -1,0 +1,153 @@
+.dndflow {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  .dndflow aside {
+    border-left: 1px solid #aaa;
+    padding: 0px;
+    font-size: 12px;
+    background: #fcfcfc;
+  }
+  
+  
+  .dndflow .dndnode {
+    height: 60px;
+    padding: 4px;
+    border: 1px solid #1a192b;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    flex-direction: column;
+  }
+  
+  .dndflow .dndnode.message {
+    border-color: #0013bd;
+    color: #0013bd;
+    border-radius: 4px;
+    border-width: 1px;
+    height: 60px;
+    margin: 15px 10px;
+  }
+  
+  
+  .dndflow .reactflow-wrapper {
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  .dndflow .selectall {
+    margin-top: 10px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .dndflow {
+      flex-direction: row;
+    }
+  
+    .dndflow aside {
+      width: 20%;
+      max-width: 250px;
+    }
+  }
+  
+  .reactflow-wrapper {
+
+    height: 100%;
+
+  }
+
+  .top-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-nav-bar{
+    width: 100vw;
+    height: 70px;
+    background-color: #ddd;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+  }
+
+  .save-btn {
+         position: absolute;
+         right: 100px;
+         top: 15px;
+         border-color: #0013bd;
+         color: #0013bd;
+         border-radius: 4px;
+         border-width: 1px;
+         height: 34px;
+         width: 180px;
+         padding: 2px 10px;
+         font-size: 14px;
+         font-family:Arial, Helvetica, sans-serif;
+
+  }
+
+  .settings-panel-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    border-bottom: 1px solid #aaa;
+  }
+
+
+.settings-panel-header {
+  display:flex;
+  border-bottom: 1px solid #aaa;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-to-nodespanel-btn{
+  
+  border:none;
+  background-color:transparent;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+}
+
+.back-to-nodespanel-btn:hover{
+  cursor: pointer;
+}
+
+.settings-panel-header-label{
+  color: #2c2929;
+  font-weight: bold;
+}
+
+.node-editor-form{
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.node-editor-text-input{
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding-top: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 50px;
+  padding-bottom: 20px;
+  line-height: 1px;
+  
+  
+}
