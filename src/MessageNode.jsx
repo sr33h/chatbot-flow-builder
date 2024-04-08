@@ -3,14 +3,17 @@ import { BsChatText } from "react-icons/bs";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 function MessageNode(props) {
+
+ 
   
  const handleClick = () => {
  
  props.data.switchToSettingsPanel(props.id);
+
  }
 
   return (
-    <div className="message-node" onClick={handleClick}>
+    <div className="message-node" onClick={handleClick} >
       <div className="node-header">
         <BsChatText
           style={{

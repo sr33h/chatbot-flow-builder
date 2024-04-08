@@ -12,6 +12,7 @@ import './index.css';//the styles for the App component
 
 import NodesPanel from './NodesPanel';
 import SettingsPanel from './SettingsPanel';
+import SaveError from './SaveError';
 
 //The custom Message type node which needs to be declared as a nodetype
 import MessageNode from './MessageNode';
@@ -34,6 +35,7 @@ const App = () => {
   const [isEditingNode, setIsEditingNode] = useState(false);
   const [currentlyEditingNode, setCurrentlyEditingNode] = useState(null);
   const [currentlyEditingNodeText, setCurrentlyEditingNodeText] = useState('');
+  const [saveError,setSaveError] = useState(false);
 
 
   const switchToSettingsPanel = (id) => {
@@ -137,15 +139,44 @@ const App = () => {
       setCurrentlyEditingNodeText(node.data.text);
     }  })
 
-   
+   const handleSave = () => {
+    if(nodes.length>1){
+      const nodeCount = nodes.length;
+      let targetCount = 0;
+      
+      nodes.forEach( node => {
+        for(let i=0;i<edges.length;i++){
+          if(node.id === edges[i].target){
+            targetCount++;
+            break;
+          }
+        }
+      });
+
+      if(nodeCount-targetCount > 1){
+        setSaveError(true);
+      }
+
+
+    }
+   }
+
+   useEffect(() => {
+         setTimeout(() => {
+          setSaveError(false)
+         }, 3000)
+   }, [saveError])
     
       
 
 
   return (
+    <>
+    
     <div className='top-container'>
       <div className='top-nav-bar'>
-        <button className='save-btn'>Save Changes</button>
+      {saveError && <SaveError />}
+        <button className='save-btn' onClick={handleSave}>Save Changes</button>
       </div>
     <div className="dndflow">
       <ReactFlowProvider>
@@ -176,6 +207,8 @@ const App = () => {
       </ReactFlowProvider>
     </div>
     </div>
+
+    </>
   );
 };
 
